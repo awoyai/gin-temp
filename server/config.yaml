@@ -1,0 +1,32 @@
+mysql:
+    prefix: "tb"
+    port: "3306"
+    config: charset=utf8mb4&parseTime=True&loc=Local
+    db-name: db_web_platform
+    username: root
+    password: root123
+    path: 127.0.0.1
+    engine: ""
+    log-mode: error
+    max-idle-conns: 10
+    max-open-conns: 100
+    singular: false
+    log-zap: false
+jwt:
+    signing-key: 6346c36f-74ad-4c14-8b6f-116dca3d3dea
+    expires-time: 7d
+    buffer-time: 1d
+    issuer: qmPlus
+system:
+    router-prefix: ""
+    port: 8888
+zap:
+    level: info
+    prefix: ''
+    format: console
+    director: log
+    encode-level: LowercaseColorLevelEncoder
+    stacktrace-key: stacktrace
+    max-age: 0
+    show-line: true
+    log-in-console: true
