@@ -1,32 +1,29 @@
 mysql:
-    prefix: "tb"
-    port: "3306"
+    port: '3306'
     config: charset=utf8mb4&parseTime=True&loc=Local
-    db-name: db_web_platform
+    db_name: gin-temp
     username: root
-    password: root123
-    path: 127.0.0.1
-    engine: ""
-    log-mode: error
-    max-idle-conns: 10
-    max-open-conns: 100
+    password: 'root123'
+    path: 'localhost'
+    engine: ''
+    log_mode: error
+    max_idle_conns: 10
+    max_open_conns: 100
     singular: false
-    log-zap: false
+    log_zap: true
 jwt:
-    signing-key: 6346c36f-74ad-4c14-8b6f-116dca3d3dea
-    expires-time: 7d
-    buffer-time: 1d
-    issuer: qmPlus
+    secret: kFtIlHcc4hscxA9IUx1U9ZC1LY3BAA
+    time_out: 604800
 system:
-    router-prefix: ""
-    port: 8888
+    router_prefix: 'api/v1'
+    port: 8000
 zap:
     level: info
     prefix: ''
     format: console
     director: log
-    encode-level: LowercaseColorLevelEncoder
-    stacktrace-key: stacktrace
+    encode_level: LowercaseColorLevelEncoder
+    stacktrace_key: stacktrace
     max-age: 0
-    show-line: true
-    log-in-console: true
+    show_line: true
+    log_in_console: true

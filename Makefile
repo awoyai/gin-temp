@@ -8,3 +8,8 @@ build:
 run:
 	make build
 	./bin/gin-temp
+
+.PHONY: dev
+dev:
+	make build
+	./bin/gin-temp -conf ./config.dev.yaml

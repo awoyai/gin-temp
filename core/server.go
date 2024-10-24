@@ -26,9 +26,7 @@ func RunWindowsServer() {
 	time.Sleep(10 * time.Microsecond)
 	global.LOG.Info("server run success on ", zap.String("address", address))
 
-	fmt.Printf(`
-	网站已启动: 127.0.0.1:%s
-	`, address)
+	fmt.Printf(`	已启动: %s	`, address)
 	global.LOG.Error(s.ListenAndServe().Error())
 }
 

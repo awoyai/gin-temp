@@ -7,8 +7,8 @@ import (
 
 func InitGreeterRouter(router *gin.RouterGroup) {
 	greeterRouter := router.Group("greeter")
-	greeterSrv := service.ServiceGroupApp.GreeterSrv
+	greeterSrv := service.ServiceGroupApp.GreeterServiceGroup.GreeterSrv
 	{
-		greeterRouter.POST("greeter", greeterSrv.Greeter)
+		greeterRouter.POST("list", greeterSrv.List)
 	}
 }

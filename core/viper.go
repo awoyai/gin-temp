@@ -14,7 +14,7 @@ import (
 // 优先级: 命令行 > 环境变量 > 默认值
 func Viper() *viper.Viper {
 	var config string
-	flag.StringVar(&config, "c", "", "choose config file.")
+	flag.StringVar(&config, "conf", "", "choose config file.")
 	flag.Parse()
 
 	if config == "" { // 判断命令行参数是否为空

@@ -2,18 +2,27 @@ package global
 
 import (
 	"github.com/awoyai/gin-temp/config"
-	"github.com/songzhibin97/gkit/cache/local_cache"
+	"github.com/awoyai/gin-temp/utils"
+	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
-	"golang.org/x/sync/singleflight"
 	"gorm.io/gorm"
 )
 
 var (
-	VP                  *viper.Viper
-	DB                  *gorm.DB
-	LOG                 *zap.Logger
-	CONFIG              *config.Server
-	BlackCache          local_cache.Cache
-	Concurrency_Control = &singleflight.Group{}
+	G      *gin.Engine = gin.Default()
+	VP     *viper.Viper
+	DB     *gorm.DB
+	DBMap  map[string]*gorm.DB
+	LOG    *zap.Logger
+	CONFIG *config.Server
+	JWT    *utils.JWTMiddleware
 )
+
+func GetDB() *gorm.DB {
+	return DB
+}
+
+// func GetSpiderDB() *gorm.DB {
+// 	return DBMap["spider"]
+// }

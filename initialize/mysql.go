@@ -30,7 +30,6 @@ func NewGormMysql() *gorm.DB {
 	l.LogMode(logger.Error)
 	if db, err := gorm.Open(mysql.New(mysqlConfig), &gorm.Config{
 		NamingStrategy: schema.NamingStrategy{
-			TablePrefix:   global.CONFIG.Mysql.Prefix,
 			SingularTable: global.CONFIG.Mysql.Singular,
 		},
 		Logger:                                   l,

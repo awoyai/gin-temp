@@ -1,21 +1,14 @@
 package request
 
 import (
-	"github.com/gofrs/uuid"
-	"github.com/golang-jwt/jwt/v4"
+	"github.com/awoyai/gin-temp/model/common"
 )
 
-// Custom claims structure
-type CustomClaims struct {
-	BaseClaims
-	BufferTime int64
-	jwt.RegisteredClaims
+type IDBase struct {
+	ID uint `json:"id"`
 }
 
-type BaseClaims struct {
-	UUID        uuid.UUID
-	ID          uint
-	Username    string
-	NickName    string
-	AuthorityId uint
+type BaseListReq struct {
+	Name string `json:"name"`
+	common.PageInfo
 }
